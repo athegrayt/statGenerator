@@ -18,7 +18,8 @@ class CsvReader {
             .split('\n')
             .map((row) => {
             return row.split(',');
-        });
+        })
+            .map(this.mapRow);
     }
 }
 exports.CsvReader = CsvReader;
