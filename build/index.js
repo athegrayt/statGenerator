@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const ConsoleReport_1 = require("./reportTargets/ConsoleReport");
+const HtmlReport_1 = require("./reportTargets/HtmlReport");
 const WinsAnalysis_1 = require("./analyzers/WinsAnalysis");
 const Summary_1 = require("./Summary");
 const MatchReader_1 = require("./MatchReader");
@@ -8,5 +8,5 @@ const CsvReader_1 = require("./CsvReader");
 const csvReader = new CsvReader_1.CsvReader('football.csv');
 const matchReader = new MatchReader_1.MatchReader(csvReader);
 matchReader.load();
-const summary = new Summary_1.Summary(new WinsAnalysis_1.WinsAnalysis('Man United'), new ConsoleReport_1.ConsoleReport);
+const summary = new Summary_1.Summary(new WinsAnalysis_1.WinsAnalysis('Man United'), new HtmlReport_1.HtmlReport());
 summary.buildAndPrintReport(matchReader.matches);
